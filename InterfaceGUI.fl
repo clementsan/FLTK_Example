@@ -1,0 +1,127 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0109 
+header_name {.h} 
+code_name {.cxx}
+class InterfaceGUI {open
+} {
+  Function {InterfaceGUI(int,int,int,int,const char*)} {open
+  } {
+    Fl_Window g_MainWindow {
+      label {Automatic Segmentation} open selected
+      xywh {141 621 690 325} type Single box UP_BOX align 65 resizable visible
+    } {
+      Fl_Menu_Bar g_MenuBar {
+        xywh {0 0 840 20} down_box UP_FRAME
+      } {
+        Submenu {} {
+          label File
+          xywh {0 0 63 20}
+        } {
+          MenuItem g_OpenFileButton {
+            label {Open...}
+            callback {OpenFileButtonPressed()}
+            xywh {0 0 30 20}
+          }
+        }
+      }
+      Fl_Return_Button g_ReturnButton {
+        label Compute
+        callback {Compute()}
+        xywh {440 245 120 35}
+      }
+      Fl_Group {} {
+        label {Quality Control}
+        xywh {475 66 157 109} box ENGRAVED_FRAME align 5
+      } {
+        Fl_Check_Button g_QCPicButton {
+          label Pictures
+          callback {QCPicButtonPressed()}
+          xywh {500 91 64 15} down_box DOWN_BOX
+        }
+        Fl_Check_Button g_QCMontageButton {
+          label Montage
+          callback {QCMontageButtonPressed()}
+          xywh {500 118 80 20} down_box DOWN_BOX
+        }
+      }
+      Fl_Group {} {
+        label {EMS Release}
+        xywh {285 65 160 75} box ENGRAVED_FRAME align 133
+      } {
+        Fl_Round_Button g_EMS15Button {
+          label {1.5}
+          callback {EMS15ButtonPressed()}
+          xywh {305 75 85 25} down_box ROUND_DOWN_BOX value 1
+        }
+        Fl_Round_Button g_EMS17Button {
+          label {1.7}
+          callback {EMS17ButtonPressed()}
+          xywh {306 105 64 15} down_box ROUND_DOWN_BOX
+        }
+      }
+      Fl_Button g_DataDirectory {
+        label {...}
+        callback {SelectDataDirectoryGUI()}
+        xywh {30 72 31 20}
+      }
+      Fl_Button g_SegmentationAtlasDirectory {
+        label {...}
+        callback {SelectSegmentationAtlasDirectoryGUI()}
+        xywh {30 230 32 20}
+      }
+      Fl_Button g_ReferenceImage {
+        label {...}
+        callback {SelectReferenceImageGUI()}
+        xywh {31 145 30 20}
+      }
+      Fl_Output g_DataDirectoryDisp {
+        label {Data Directory}
+        xywh {70 66 155 28} align 5
+      }
+      Fl_Output g_ReferenceImageDisp {
+        label {Reference Image}
+        xywh {75 141 150 28} align 5
+      }
+      Fl_Output g_SegmentationAtlasDisp {
+        label {Segmentation Atlas}
+        xywh {75 226 150 24} align 5
+      }
+      Fl_Group g_MyGroup {
+        label Group open
+        xywh {280 160 175 65} box ENGRAVED_FRAME
+      } {
+        Fl_Button g_Button {
+          label button
+          xywh {305 185 64 20}
+        }
+      }
+      Fl_Group g_MyGroup2 {
+        label group2 open
+        xywh {280 160 175 65}
+      } {
+        Fl_Button g_Button2 {
+          label button2
+          xywh {305 185 64 20} labelsize 8
+        }
+      }
+    }
+  }
+  Function {Compute()} {return_type {virtual void}
+  } {}
+  Function {OpenFileButtonPressed()} {return_type {virtual void}
+  } {}
+  Function {EMS15ButtonPressed()} {open return_type {virtual void}
+  } {}
+  Function {EMS17ButtonPressed()} {open return_type {virtual void}
+  } {}
+  Function {QCPicButtonPressed()} {open return_type {virtual void}
+  } {}
+  Function {QCMontageButtonPressed()} {open return_type {virtual void}
+  } {}
+  Function {SelectDataDirectoryGUI()} {open return_type {virtual void}
+  } {}
+  Function {SelectSegmentationAtlasDirectoryGUI()} {open return_type {virtual void}
+  } {}
+  Function {SelectReferenceImageGUI()} {open return_type {virtual void}
+  } {}
+} 
